@@ -127,6 +127,8 @@ IGNORE 1 ROWS
 (id_reserva,id_unidade,id_tipo_quarto,id_cliente,id_canal,data_checkin,data_checkout,qtd_diarias,num_hospedes,avaliacao_hospede,status_reserva,forma_pagamento);
 
 
+
+
 SELECT COUNT(*) AS total_reservas
 FROM reservas;
 
