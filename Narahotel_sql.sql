@@ -67,12 +67,6 @@ CREATE TABLE reservas (
         REFERENCES canais_de_venda(id_canal)
 );
 
-DROP TABLE reservas;
-
-SHOW GLOBAL VARIABLES LIKE 'local_infile';
-
-SET GLOBAL local_infile = 1;
-
 
 LOAD DATA LOCAL INFILE "C:/Users/PC GAMER/Downloads/canais_venda.csv"
 INTO TABLE canais_de_venda
@@ -90,7 +84,6 @@ IGNORE 1 ROWS
 (id_cliente,nome,cidade_origem,estado_origem,faixa_etaria,tipo_cliente);
 
 
-
 LOAD DATA LOCAL INFILE "C:/Users/PC GAMER/Downloads/funcionarios.concat.csv"
 INTO TABLE funcionarios
 FIELDS TERMINATED BY ';'
@@ -98,8 +91,6 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (id_funcionario,id_unidade,nome,cargo,departamento,salario,data_admissao);
 
-SELECT COUNT(*) AS total_funcionarios
-FROM funcionarios;
 
 LOAD DATA LOCAL INFILE "C:/Users/PC GAMER/Downloads/unidades.concat.csv"
 INTO TABLE unidades
@@ -107,8 +98,6 @@ FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (id_unidade,nome_unidade,cidade,regiao,categoria_hotel,num_quartos_total);
-
-
 
 
 LOAD DATA LOCAL INFILE "C:/Users/PC GAMER/Downloads/tipos_quarto.concat.csv"
@@ -125,7 +114,6 @@ FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (id_reserva,id_unidade,id_tipo_quarto,id_cliente,id_canal,data_checkin,data_checkout,qtd_diarias,num_hospedes,avaliacao_hospede,status_reserva,forma_pagamento);
-
 
 
 
